@@ -1,0 +1,23 @@
+HBRUSH CTestCMyEditDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+    HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
+ 
+    // Управляем цветовым характером окна редактирования.
+    // Если уведомление о подготовке к перерисовке
+    // пришло от окна редактирования
+    // с идентификатором IDC_EDIT1 перерисуем
+    // его по нашему усмотрению.
+    if ( pWnd->GetDlgCtrlID() == IDC_EDIT1)
+    {
+        // Внутри этого блока pDC принадлежит окну
+        // редактирования с идентификатором IDC_EDIT1
+        pDC->SetBkMode(TRANSPARENT);
+        pDC->SetTextColor(RGB(255,0,0));
+ 
+       return m_Brush;
+    }
+ 
+    // TODO: Return a different brush
+    // if the default is not desired
+    return hbr;
+}
