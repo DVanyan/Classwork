@@ -1,0 +1,20 @@
+// создаёт и одновременно открывает новый объект хранения
+HRESULT CreateStorage
+(
+  const OLECHAR *pwcsName, 
+  DWORD         grfMode,
+  DWORD         reserved1,
+  DWORD         reserved2,
+
+  // получаем указатель на созданное хранилище
+  IStorage      **ppstg
+);
+
+// открывает существующий объект с определенным режимом доступа
+IStorage::OpenStorage
+
+// создает и открывает новый поток в данном хранилище
+IStorage::CreateStream
+
+// открывает поток в данном хранилище с определенным режимом доступа
+IStorage::OpenStream
